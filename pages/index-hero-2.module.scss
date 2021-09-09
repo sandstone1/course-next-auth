@@ -1,0 +1,104 @@
+
+
+// ==============================
+// PARTIAL IMPORTS
+// ==============================
+
+@import '../styles/_color_variables.scss';
+@import '../styles/_font_variables.scss';
+@import '../styles/_responsive_breakpoints.scss';
+
+
+.homePageContainer {
+
+    // ==============================
+    // Image hero element ( window ) that blends in with header element and the main element
+    // ==============================
+
+    // ****
+    // remember to remove or comment out the styled jsx in the index.js file in order for the
+    // hero image option 2 to work
+    // ****
+
+    // ****
+    // remember to change the import for the scss file in the index.js file 
+    // ****
+
+    display               : grid;
+    grid-template-columns : minmax( 6rem, 1fr )                        // col 1 - 2    ( column 1 )
+                            repeat( 10, minmax( min-content, 12rem ) ) // col 2 - 12   ( column 2 - 11 )
+                            minmax( 6rem, 1fr );                       // col 12 - 13  ( column 12 )
+    grid-row              : 1 / -1;
+    grid-column           : 1 / -1;
+
+    background-image      : $gray-background-3;
+
+    .homePageContainerImageContainer {
+
+        display            : grid;
+        grid-template-rows : 79.5rem;
+        grid-row           : 2 / 12;
+        grid-column        : 2 / 12;
+        width              : 100%; // width is the same size as the grid lines as the viewport shrinks
+        margin             : 9.0rem auto 12.0rem auto;
+        padding            : 0.3rem;
+
+        border        : 3.0rem solid rgba( 220, 220, 220, 1 );
+        border-radius : 1.0rem;
+        // box shadow is from " https://css-tricks.com/almanac/properties/b/box-shadow/ "
+        box-shadow    :
+            0 2.8px  2.2px  rgba( 0, 0, 0, 0.034 ),
+            0 6.7px  5.3px  rgba( 0, 0, 0, 0.048 ),
+            0 12.5px 10px   rgba( 0, 0, 0, 0.060 ),
+            0 22.3px 17.9px rgba( 0, 0, 0, 0.072 ),
+            0 41.8px 33.4px rgba( 0, 0, 0, 0.086 ),
+            0 100px  80px   rgba( 0, 0, 0, 0.120 )
+        ;
+        // box-shadow    : 3px 3px 10px $black;
+        
+
+        // create an overlay by doind the following:
+        background-image      : linear-gradient( to right, rgba( 16, 29, 44, 0.73 ), rgba( 16, 29, 44, 0.73 ) ), url( ../public/images/jackson_hole_01_250.jpg );
+        background-position   : center; 
+        background-size       : cover;
+        background-blend-mode : multiply;
+
+        // this puts a second border inside the main border and this second border will have
+        // the same color as the parent color or white in this case and remember this border's
+        // thickness is determined by the padding above
+        background-clip : content-box;        
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            width: 80%; // width is smaller than the grid lines as the viewport shrinks
+
+        }
+
+        @media all and ( max-width : $bp-620 ) {
+
+            width: 90%; // width is smaller than the grid lines as the viewport shrinks
+
+        }
+
+        @media all and ( max-width : $bp-375 ) {
+
+            width: 100%; // width is the same size as the grid lines as the viewport shrinks
+
+        }
+
+        .homePageContainerImageContainerH2 {
+
+            margin : 6.0rem 0 4.0rem 0;
+
+            font-family    : $font-primary-4;
+            font-size      : 3.2rem;
+            font-weight    : 700;
+            color          : $gray-225;
+            letter-spacing : 1px;
+            text-align     : center;
+
+        } // end of title
+
+    } // end of homePageContainerImageContainer
+
+} // end of homePageContainer
