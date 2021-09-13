@@ -952,6 +952,42 @@ const Nav = () => {
     // remember that as soon as we call the signOut function the session object will change
     // from true to false or null and next.js will clear out the next-auth-session-token cookie
 
+    // ==============================
+    // handleUserName function
+    // ==============================
+
+    const handleUserName = ( name ) => {
+
+        // ==============================
+        // define variables
+        // ==============================
+
+        // get the user first name
+        const userFirstName = name.split( ' ' )[ 0 ];
+        // get the user last name
+        const userLastName = name.split( ' ' )[ 1 ];
+        // get the user first name initial
+        const userFirstNameInitial = userFirstName.slice( 0, 1 ).toUpperCase();
+        // get the user last name initial
+        const userLastNameInitial = userLastName.slice( 0, 1 ).toUpperCase();
+
+        if ( userFirstName.length < 9 ) {
+
+            // construct the const userName
+            const userName = `${ userFirstName } ${ userLastNameInitial }`;
+
+            return userName;
+
+        } else {
+
+            // construct the const userInitials
+            const userInitials = `${ userFirstNameInitial }${ userLastNameInitial }`;
+
+            return userInitials;
+
+        } // end of if else
+
+    } // end of handleUserName
 
     return (
 
@@ -997,7 +1033,7 @@ const Nav = () => {
                                 <Link href="/profile">
                                     <a>
                                         <FaUser style={ { verticalAlign: '-2px', fontSize: '1.75rem' } } />
-                                        &nbsp;&nbsp;{ session.user.name } Profile
+                                        &nbsp;&nbsp;{ handleUserName( session.user.name ) } Profile
                                     </a>
                                 </Link>
                             </li>
@@ -1012,7 +1048,7 @@ const Nav = () => {
                                     <a 
                                         onClick={ handleLogout }
                                     >
-                                        <VscSignOut style={ { verticalAlign: '-5px', fontSize: '2.15rem' } } />
+                                        <VscSignOut style={ { verticalAlign: '-4px', fontSize: '2.15rem' } } />
                                         &nbsp;&nbsp;Logout
                                     </a>
                                 </Link>

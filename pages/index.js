@@ -42,6 +42,16 @@ export default function HomePage() {
                         text-decoration : underline;  // underline " About " 
             
                     }
+                    @media all and ( max-width : 1280px ) {
+
+                        body > div > div > header > nav > div:nth-child( 1 ) {
+
+                            margin : 1.5rem 0 1.0rem 0 !important; // provide spacing between logo and nav elements on
+                            // small screen sizes
+                    
+                        }
+
+                    }
                 `}
 			</style>
 
