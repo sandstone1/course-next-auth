@@ -6,52 +6,39 @@
 
 @import '../styles/_color_variables.scss';
 @import '../styles/_font_variables.scss';
-@import '../styles/_responsive_breakpoints.scss';
 
 
 .homePageContainer {
 
-    // ==============================
-    // Image hero element ( full page ) that lays on top of the header element and the main element
-    // ==============================
-
-    // ****
-    // remember we are using styled jsx in the index.js file to lay the header nav elements
-    // on top of the hero image element
-    // ****
-
-    position : absolute;
-    left     : 0;
-    top      : 0;
-    right    : 0;
-    bottom   : 0;
-
-    background-image      : linear-gradient( to bottom, rgba( 61, 71, 98, 0.9 ),  rgba( 81, 91, 118, 0.9 ) ), url( ../public/images/sedona_01.jpg );
-    background-position   : center; 
-    background-size       : cover;
-    background-blend-mode : multiply;
+    grid-column : 1 / -1; // do this so that the child elements take up the entire
+    // screen horizontally
 
     .homePageContainerImageContainer {
 
-        display     : grid;
-        // grid-template-rows : 100vh; // could have removed bottom : 0; above and use this instead
-        // and in this case I would have had to remove the margin below in order for this to work
-        // correctly
-        grid-row    : 2 / 12;
-        grid-column : 2 / 12;
-        width       : 100%; // width is the same size as the grid lines as the viewport shrinks
-        margin      : 22.0rem auto 0 auto;
-
-        @media all and ( max-width : $bp-1280 ) {
-
-            margin : calc( 22.0rem * 1.3 ) auto 0 auto;
-
-        }
-
+        // ==============================
+        // Image hero element ( full page ) that lays on top of the header element and the main element
+        // ==============================
+    
+        // ****
+        // remember we are using styled jsx in the index.js file to lay the header nav elements
+        // on top of the hero image element
+        // ****
+    
+        position : absolute;
+        left     : 0;
+        top      : 0;
+        right    : 0;
+        bottom   : 0;
+    
+        background-image      : linear-gradient( to bottom, rgba( 61, 71, 98, 0.9 ),  rgba( 81, 91, 118, 0.9 ) ), url( ../public/images/sedona_01.jpg );
+        background-position   : center; 
+        background-size       : cover;
+        background-blend-mode : multiply;
 
         .homePageContainerImageContainerH2 {
 
-            margin : 6.0rem 0 4.0rem 0;
+            margin  : 28.0rem 0 4.0rem 0;
+            padding : 0 4.0rem 0 4.0rem;
 
             font-family    : $font-primary-4;
             font-size      : 3.2rem;

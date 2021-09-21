@@ -61,33 +61,3 @@ export default function HomePage() {
 
 }
 
-
-// in case I need it
-/*
-            <style jsx global>
-                {`
-                    body > div > div > header > nav {
-
-                        z-index : 1; // lay the header nav elements on top of the hero image element
-            
-                    }
-                    body > div > div > footer {
-
-                        z-index : 1; // lay the footer element on top of the hero image element
-            
-                    }
-                    body > div > div > footer > h2,
-                    body > div > div > footer > div > span {
-
-                        color : rgba( 255, 255, 255, 1 ) !important; // change the footer text color to white
-            
-                    }
-                    body > div > div > footer > div > a {
-
-                        color           : rgba( 255, 255, 255, 1 ) !important; // change the footer text color to white
-                        text-decoration : underline;  // underline " About " 
-            
-                    }
-                `}
-			</style>
-*/
